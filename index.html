@@ -6,25 +6,25 @@
   <title>The Shoopies</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
  </head>
 <body>
    <section class="banner hidden">
       <p>You have made all 5 nominations!</p>
    </section>
-   
-   <main class="fade">
+
+   <main>
     <section class="container">
       <h1> The Shoppies</h1>
-      <section>
+      <section class="input">
         <label for="Title">Movie title</label>
         <input type="text" placeholder="🔎 title" id="title" class="title">
       </section>
       
       <section class="output hidden" id="output">
         <section id="results" class="results">
-          <p id="input"></p>
-          <ul class="results movies">
+          <p id="inputSearch"></p>
+          <ul class="resultsList movieList">
           </ul> 
         
           <section class="notFound hidden">
@@ -49,7 +49,7 @@
     </section>
   </main>
 
-  <script type="text/javascript" src="js/main.js">
+  <script type="text/javascript" src="js/shoppies.js">
   </script>
 </body>
 </html>

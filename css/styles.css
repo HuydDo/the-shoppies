@@ -1,9 +1,61 @@
 body {
 font-family: 'Quicksand', sans-serif;
+background-color:whitesmoke;
 }
 
-.fade{
-  display: block;
-  opacity: 1;
-  transition: opacity 3s ease-in;
+.banner {
+  color: gray;
+  background-color: rgb(237, 243, 235);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* .hidden {
+  display: none;
+} */
+
+.container {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top:12%;
+ 
+}
+
+.input{
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  font-size: 1.2rem;
+  
+  margin: 0px, 30px, 10px, 30px;
+  border: 1px solid rgb(224, 220, 220);
+  border-radius: 3px;
+}
+
+.title {
+  width: 100%;
+} 
+
+.output{
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+} 
+
+.results, .nominations {
+  border: 1px solid rgb(224, 220, 220);
+  background-color: white;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.nominations{
+  width: 40%
+}
+.results{
+  width:60%
 }
