@@ -3,23 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shoopies</title>
+  <title>The Shoopies</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
  </head>
 <body>
-  <section>
-
-  </section>
-
-  <main class="fade">
+   <section class="banner hidden">
+      <p>You have made all 5 nominations!</p>
+   </section>
+   
+   <main class="fade">
     <section class="container">
       <h1> The Shoppies</h1>
+      <section>
+        <label for="Title">Movie title</label>
+        <input type="text" placeholder="🔎 title" id="title" class="title">
+      </section>
+      
+      <section class="output hidden" id="output">
+        <section id="results" class="results">
+          <p id="input"></p>
+          <ul class="results movies">
+          </ul> 
+        
+          <section class="notFound hidden">
+            <p>No matching found</p>
+          </section>
+      </section>
 
+      <section id="nominations" class="nominations">
+        <section class="nominateHeader">
+          <p class="nominateTitle">Nominations</p>
+        </section>
+        <ul class="nominateList">
+
+        </ul>
+
+        <section class="complete hidden" id="complete">
+          <button type="button" name="submit" class="submit">Submit
+          </button>
+        </section>
+
+      </section>
     </section>
   </main>
+
   <script type="text/javascript" src="js/main.js">
   </script>
 </body>
 </html>
+

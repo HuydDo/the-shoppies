@@ -17,6 +17,7 @@
 
 - The user may add at most <ins>**5**</ins> unique movies to the user's nominations list, and remove any selections.  There is a counter that letting the user know how many nominations are left.
 
-- The nominations will be saved if the page is refreshed.  The banner and submit button will be displayed to submit their selections.
+- Save nomination lists if the user leaves the page
+ The banner and submit button will be displayed to submit their selections.
 
 
