@@ -2,14 +2,13 @@
 [The Shoppies](https://) Shopify's movie award nominations website
 
 
-
 ## Built With
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript#Learn_more) - JavaScript 
-- [OMDB](http://www.omdbapi.com/) - Movie data
+- [OMDb](http://www.omdbapi.com/) - Movie data
 
 ### Website Function Overview
 
-- The webpage searches [OMDB](http://www.omdbapi.com/) for movies information.  
+- The webpage searches [OMDb](http://www.omdbapi.com/) for movies information.  
 
 - Update to the query will automatically update the search results.
 
