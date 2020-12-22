@@ -7,7 +7,7 @@ let nominationsArray = [];
 
 document.addEventListener('DOMContentLoaded', getLocalNominations);
 
-document.querySelector('.okButton').addEventListener('click', removeThanks)
+// document.querySelector('.okButton').addEventListener('click', removeThanks)
 document.querySelector('.submitButton').addEventListener('click', submitButton)
 
 function removeThanks(){
@@ -23,7 +23,7 @@ function submitButton(){
   document.querySelector('.banner').classList.add('hidden')
 
   document.querySelector('.overlay').classList.remove('hidden')
-  document.querySelector('.thanksDetails').classList.remove('hidden')
+  // document.querySelector('.thanksDetails').classList.remove('hidden')
 
 }
 

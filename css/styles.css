@@ -6,7 +6,6 @@
   font-size: 9px;
   text-decoration: none;
   box-sizing: border-box;
-  
 }
 
 body{
@@ -19,6 +18,7 @@ body{
   position: absolute;
   width: 80%;
   left: 10%;
+  margin-top: 4%;
   /* top:10%; */
 }
 
@@ -26,9 +26,9 @@ h1{
   margin-bottom: 1.5rem;
   font-size: 3rem;
 }
-/* h3{
+h3{
   display: inline-block;
-} */
+}
 
 .inputSection{
   width: 100%;
@@ -93,7 +93,7 @@ p{
 }
 .nominations li h3, .results li h3{
   font-size: 1.5rem;
-  padding-top: .5rem;
+  padding-top: 0.3rem;
 }
 
 button{
@@ -111,7 +111,7 @@ button:focus{
   display: flex;
   /* flex-flow: wrap; */
 }
-.outputContainer > section:first-child {
+.outputContainer section:first-child {
   margin-right: 10px;
 }
 
@@ -122,18 +122,19 @@ li{
   margin-left: 3rem;
 }
 
-.arrow{
+/* .arrow{
   display: inline-block;
   font-size: 1.7rem;
   border-radius: 50%;
   padding: 1rem;
   margin-right: .5rem;
-}
-.arrow:hover{
+} */
+/* .arrow:hover{
   background-color: rgba(244, 246, 248, .7);
   cursor: pointer;
-}
-button, .arrow:hover{
+} */
+/* button, .arrow:hover{ */
+button {
   cursor:pointer;
 }
 .nominationsList li{
@@ -141,7 +142,7 @@ button, .arrow:hover{
   justify-content: space-between;
 }
 .nominationsList li button{
-  margin-right: .5rem;
+  margin-right: 1rem;
 }
 .opacity{
   color: gray;
@@ -195,9 +196,9 @@ button, .arrow:hover{
   transition: transform 30s ease-in-out;
 }
 
-.arrow.active{
+/* .arrow.active{
   transform:rotate(-180deg);
-}
+} */
 .movieDetails{
   max-height: 0;
   overflow: hidden;
@@ -220,26 +221,26 @@ button, .arrow:hover{
   align-self:center;
   display: none;
 }
-.loader img{
+/* .loader img{
   width: 37%;
   display: inline-block;
-}
+} */
 .banner{
   background-color: rgb(212, 219, 170);
-  color:black;
+  color:rgb(48, 46, 46);
   width: 100%;
   /* position: sticky; */
   top: 0;
   display: flex;
   justify-content: center;
-  z-index: 3;
+  /* z-index: 3; */
 }
 .nothingFound p {
   font-size: 1.5rem;
   text-align: center;
 }
 .outputContainer button:hover{
-  color: darkgray;
+  color: rgb(92, 88, 88);
 
 }
 .outputContainer{
@@ -255,7 +256,7 @@ button, .arrow:hover{
   z-index: 10;
   background-color: rgba(0,0,0,0.5);
 }
-.thanksDetails{
+/* .thanksDetails{
     width: 375px;
     height: 240px;
     position: fixed;
@@ -266,7 +267,7 @@ button, .arrow:hover{
     background-color: rgba(160,71,43,.97);
     border-radius: 5px;
     text-align: center;
-    z-index: 11; /* 1px higher than the overlay layer */
+    z-index: 11; 
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -274,8 +275,8 @@ button, .arrow:hover{
 }
 .thanksDetails p,.thanksDetails button{
   font-size: 1rem;
-}
-.fa-check-circle{
+} */
+/* .fa-check-circle{
   font-size: 2rem;
 }
 
@@ -287,16 +288,16 @@ button, .arrow:hover{
 }
 .fa-check-circle{
   color: rgba(244, 246, 248, .8);
-}
+} */
 
 .results button{
   margin-right: 1rem;
 }
 
-.hidden{
+/* .hidden{
   display: none;
-}
+} */
 
-.container{
+/* .container{
   margin-top: 4%;
-}
+} */
