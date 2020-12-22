@@ -3,9 +3,10 @@
 *{
   padding:0;
   margin: 0;
+  font-size: 9px;
   text-decoration: none;
   box-sizing: border-box;
-  font-size: 10px;
+  
 }
 
 body{
@@ -17,24 +18,24 @@ body{
 .container{
   position: absolute;
   width: 80%;
-  left: 8%;
-  top:11%;
+  left: 10%;
+  /* top:10%; */
 }
 
 h1{
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
 }
-h3{
+/* h3{
   display: inline-block;
-}
+} */
 
 .inputSection{
   width: 100%;
   background-color: white;
   padding:2rem 2rem;
 
-  font-size: 1rem;
+  /* font-size: 1rem; */
   border:1px solid rgb(210, 211, 212);
   border-radius: 3px;
 }
@@ -46,7 +47,7 @@ h3{
 label{
   font-size: 2rem;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.9rem;
 }
 
 input{
@@ -59,6 +60,7 @@ input{
 input:focus{
   outline: none;
 }
+
 p{
   font-size: 1.5rem;
 }
@@ -71,10 +73,10 @@ p{
   width: 50%;
 }
 .nominations{
-  width: 40%
+  width: 40%;
 }
 .results{
-  width:60%
+  width:60%;
 }
 .nominations > p, .results > p{
   margin-left: 1.5rem;
@@ -105,13 +107,16 @@ button:focus{
   outline: none;
 }
 .outputContainer{
-  width: 100%;
+  /* width: 100%; */
   display: flex;
-  flex-flow: wrap;
+  /* flex-flow: wrap; */
+}
+.outputContainer > section:first-child {
+  margin-right: 10px;
 }
 
 li{
-  margin-left: 3rem;
+  margin-left: 4rem;
 }
 .nominations li{
   margin-left: 3rem;

@@ -16,6 +16,7 @@ function removeThanks(){
 }
 
 function submitButton(){
+  removeThanks()
   nominationList.innerHTML='';
   resultsList.innerHTML='';
   document.querySelector('.outputContainer').classList.add('hidden')
@@ -23,6 +24,7 @@ function submitButton(){
 
   document.querySelector('.overlay').classList.remove('hidden')
   document.querySelector('.thanksDetails').classList.remove('hidden')
+
 }
 
 function fullBallot(){
