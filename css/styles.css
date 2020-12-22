@@ -176,9 +176,9 @@ button {
   padding: 1rem;
   margin-top: 1rem;
 }
-.hidden{
+/* .hidden{
   display: none;
-}
+} */
 
 
 /* sliding more info animation */
@@ -294,9 +294,9 @@ button {
   margin-right: 1rem;
 }
 
-/* .hidden{
+.hidden{
   display: none;
-} */
+}
 
 /* .container{
   margin-top: 4%;

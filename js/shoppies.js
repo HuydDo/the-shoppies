@@ -25,6 +25,7 @@ function submitButton(){
   document.querySelector('.overlay').classList.remove('hidden')
   // document.querySelector('.thanksDetails').classList.remove('hidden')
 
+  
 }
 
 function fullBallot(){
