@@ -2,7 +2,7 @@ const titleInput = document.querySelector('#titleInput')
 const resultsList = document.querySelector('.resultsList')
 const nominationList = document.querySelector('.nominationsList')
 let buttons = document.querySelector('button')
-let nominationCount = 0;
+let count = 0;
 let nominationsArray = [];
 
 document.addEventListener('DOMContentLoaded', getLocalNominations);
@@ -10,30 +10,31 @@ document.addEventListener('DOMContentLoaded', getLocalNominations);
 // document.querySelector('.okButton').addEventListener('click', removeThanks)
 document.querySelector('.submitButton').addEventListener('click', submitButton)
 
-function removeThanks(){
+let remove = () => {
+// function remove(){
   window.localStorage.clear()
   window.location.reload();
 }
-
+// let submitButton = () =>{
 function submitButton(){
-  removeThanks()
+  remove();
   nominationList.innerHTML='';
   resultsList.innerHTML='';
   document.querySelector('.outputContainer').classList.add('hidden')
   document.querySelector('.banner').classList.add('hidden')
 
-  document.querySelector('.overlay').classList.remove('hidden')
+  // document.querySelector('.overlay').classList.remove('hidden')
   // document.querySelector('.thanksDetails').classList.remove('hidden')
-
-  
 }
 
-function fullBallot(){
+let full = () => { 
+// function full(){
   document.querySelector('#complete').classList.toggle("hidden");
   document.querySelector('.banner').classList.toggle("hidden")
 }
 
-function removeSelection(e){
+let removeSelection = (e) => {
+// function removeSelection(e){
   let movieTitle = e.target.previousSibling.textContent
   removeLocalNominations(movieTitle);
   let currentResultList = document.querySelector('.resultsList').children
@@ -52,27 +53,28 @@ function removeSelection(e){
 
   console.log(currentResultList);
 
-  if (nominationCount>0) {
-    nominationCount--;
-    // document.querySelector('.countdown').textContent = `${5-nominationCount} votes left!`
+  if (count>0) {
+    count--;
+    // document.querySelector('.countdown').textContent = `${5-count} votes left!`
   }
 
   e.target.parentElement.remove()
   if (!document.querySelector('.complete').classList.contains('hidden')) {
-    fullBallot();
+    full();
   }
 }
 
-function nominateSelection(e){
+let nominateSelection = (e) => {
+// function nominateSelection(e){
   let currentNominationList = document.querySelector('#nominations').children
 
-  if (nominationCount<=4 && (!nominationsArray.includes(e.target.parentElement.parentElement.firstChild.textContent))){
+  if (count<=4 && (!nominationsArray.includes(e.target.parentElement.parentElement.firstChild.textContent))){
     e.target.classList.add('opacity');
 
     let listItem = document.createElement('li')
     let movieSelection = document.createElement('h3')
     movieSelection.textContent = e.target.parentElement.previousSibling.textContent
-    e.target.parentElement.parentElement.id= `${nominationCount}`
+    e.target.parentElement.parentElement.id= `${count}`
     saveLocalNomination(e.target.parentElement.previousSibling.textContent);
 
     let removeButton = document.createElement('button')
@@ -85,15 +87,16 @@ function nominateSelection(e){
     nominationList.appendChild(listItem)
 
     nominationsArray.push(e.target.parentElement.parentElement.firstChild.textContent)
-    nominationCount++;
-    // document.querySelector('.countdown').textContent = `${5-nominationCount} votes left!`
-    if (nominationCount===5){
-      fullBallot();
+    count++;
+    // document.querySelector('.countdown').textContent = `${5-count} votes left!`
+    if (count===5){
+      full();
     }
   }
 }
 
-function showResults(results){
+let showResults = (results) => {
+// function showResults(results){
 
   inputSearch.textContent = `Results for "${titleInput.value}"`
   titleInput.value="";
@@ -145,7 +148,8 @@ function showResults(results){
   });
 }
 
-function movieSearch(){ // bring back all matches dating back to 1995
+let movieSearch =  () => {
+// function movieSearch(){ // bring back all matches dating back to 1995
   document.querySelector('#output').classList.remove('hidden')
     inputSearch.textContent = `Searching for "${titleInput.value}"`
     document.querySelector('.loader').style.display='flex'
@@ -166,8 +170,9 @@ function movieSearch(){ // bring back all matches dating back to 1995
   }
 
     // brings back matches from each year ending at yearcheckend`
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    // fetch(proxyurl+`www.omdbapi.com/?apikey=2749e644${title}`)
+     const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    // fetch(proxyurl+`http://www.omdbapi.com/?s=${title}&apikey=`)
+    //proxyurl+ below
     fetch(proxyurl+`www.omdbapi.com/?apikey=c2d156e8&s=${title}`)
       .then(response=>response.json())
       .then(data=>{
@@ -211,8 +216,8 @@ function getLocalNominations(){
   nominations.forEach((nomination, i) => {
 
     //counter
-    nominationCount = nominations.length;
-    // document.querySelector('.countdown').textContent = `${5-nominationCount} votes left!`
+    count = nominations.length;
+    // document.querySelector('.countdown').textContent = `${5-count} votes left!`
 
     let listItem = document.createElement('li')
     let movieSelection = document.createElement('h3')
@@ -228,14 +233,14 @@ function getLocalNominations(){
     listItem.appendChild(removeButton)
     nominationList.appendChild(listItem)
     nominationsArray= nominations
-    if (nominationCount===5){
-      fullBallot();
+    if (count===5){
+      full();
     }
   });
 }
 
-
-function removeLocalNominations(nomination){
+let removeLocalNominations = (nomination) =>{
+// function removeLocalNominations(nomination){
   let nominations;
   if(localStorage.getItem('nominations') === null){ // if nothing with 'nominations exist then create an empty array'
     nominations = [];
@@ -249,7 +254,8 @@ function removeLocalNominations(nomination){
 
 }
 
-function saveLocalNomination(nomination){
+let saveLocalNomination = (nomination) => {
+// function saveLocalNomination(nomination){
   let nominations;
   if(localStorage.getItem('nominations') === null){ // if nothing with 'nominations exist then create an empty array'
     nominations = [];
@@ -267,7 +273,7 @@ titleInput.addEventListener('keyup', (e) => {
       movieSearch();
     }
     else{
-      console.log('looks like you didnt enter a string');
+      console.log('input is empty');
     }
   }
 });
