@@ -19,7 +19,6 @@ body{
   width: 80%;
   left: 10%;
   margin-top: 4%;
-  /* top:10%; */
 }
 
 h1{
@@ -34,8 +33,6 @@ h3{
   width: 100%;
   background-color: white;
   padding:2rem 2rem;
-
-  /* font-size: 1rem; */
   border:1px solid rgb(210, 211, 212);
   border-radius: 3px;
 }
@@ -107,9 +104,7 @@ button:focus{
   outline: none;
 }
 .outputContainer{
-  /* width: 100%; */
   display: flex;
-  /* flex-flow: wrap; */
 }
 .outputContainer section:first-child {
   margin-right: 10px;
@@ -122,18 +117,6 @@ li{
   margin-left: 3rem;
 }
 
-/* .arrow{
-  display: inline-block;
-  font-size: 1.7rem;
-  border-radius: 50%;
-  padding: 1rem;
-  margin-right: .5rem;
-} */
-/* .arrow:hover{
-  background-color: rgba(244, 246, 248, .7);
-  cursor: pointer;
-} */
-/* button, .arrow:hover{ */
 button {
   cursor:pointer;
 }
@@ -176,12 +159,8 @@ button {
   padding: 1rem;
   margin-top: 1rem;
 }
-/* .hidden{
-  display: none;
-} */
 
 
-/* sliding more info animation */
 .movieItem{
   position: relative;
 }
@@ -196,9 +175,6 @@ button {
   transition: transform 30s ease-in-out;
 }
 
-/* .arrow.active{
-  transform:rotate(-180deg);
-} */
 .movieDetails{
   max-height: 0;
   overflow: hidden;
@@ -221,19 +197,14 @@ button {
   align-self:center;
   display: none;
 }
-/* .loader img{
-  width: 37%;
-  display: inline-block;
-} */
+
 .banner{
   background-color: rgb(212, 219, 170);
   color:rgb(48, 46, 46);
   width: 100%;
-  /* position: sticky; */
   top: 0;
   display: flex;
   justify-content: center;
-  /* z-index: 3; */
 }
 .nothingFound p {
   font-size: 1.5rem;
@@ -256,39 +227,6 @@ button {
   z-index: 10;
   background-color: rgba(0,0,0,0.5);
 }
-/* .thanksDetails{
-    width: 375px;
-    height: 240px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -150px;
-    background-color: rgba(160,71,43,.97);
-    border-radius: 5px;
-    text-align: center;
-    z-index: 11; 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
-.thanksDetails p,.thanksDetails button{
-  font-size: 1rem;
-} */
-/* .fa-check-circle{
-  font-size: 2rem;
-}
-
-.thanksDetails button{
-  background-color:whitesmoke
-}
-.thanksDetails button:focus{
-  outline:none;
-}
-.fa-check-circle{
-  color: rgba(244, 246, 248, .8);
-} */
 
 .results button{
   margin-right: 1rem;
@@ -298,6 +236,3 @@ button {
   display: none;
 }
 
-/* .container{
-  margin-top: 4%;
-} */

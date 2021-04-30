@@ -7,34 +7,27 @@ let nominationsArray = [];
 
 document.addEventListener('DOMContentLoaded', getLocalNominations);
 
-// document.querySelector('.okButton').addEventListener('click', removeThanks)
 document.querySelector('.submitButton').addEventListener('click', submitButton)
 
 let remove = () => {
-// function remove(){
   window.localStorage.clear()
   window.location.reload();
 }
-// let submitButton = () =>{
+
 function submitButton(){
   remove();
   nominationList.innerHTML='';
   resultsList.innerHTML='';
   document.querySelector('.outputContainer').classList.add('hidden')
   document.querySelector('.banner').classList.add('hidden')
-
-  // document.querySelector('.overlay').classList.remove('hidden')
-  // document.querySelector('.thanksDetails').classList.remove('hidden')
 }
 
 let full = () => { 
-// function full(){
   document.querySelector('#complete').classList.toggle("hidden");
   document.querySelector('.banner').classList.toggle("hidden")
 }
 
 let removeSelection = (e) => {
-// function removeSelection(e){
   let movieTitle = e.target.previousSibling.textContent
   removeLocalNominations(movieTitle);
   let currentResultList = document.querySelector('.resultsList').children
@@ -55,7 +48,6 @@ let removeSelection = (e) => {
 
   if (count>0) {
     count--;
-    // document.querySelector('.countdown').textContent = `${5-count} votes left!`
   }
 
   e.target.parentElement.remove()
@@ -65,7 +57,6 @@ let removeSelection = (e) => {
 }
 
 let nominateSelection = (e) => {
-// function nominateSelection(e){
   let currentNominationList = document.querySelector('#nominations').children
 
   if (count<=4 && (!nominationsArray.includes(e.target.parentElement.parentElement.firstChild.textContent))){
@@ -88,7 +79,6 @@ let nominateSelection = (e) => {
 
     nominationsArray.push(e.target.parentElement.parentElement.firstChild.textContent)
     count++;
-    // document.querySelector('.countdown').textContent = `${5-count} votes left!`
     if (count===5){
       full();
     }
@@ -96,7 +86,6 @@ let nominateSelection = (e) => {
 }
 
 let showResults = (results) => {
-// function showResults(results){
 
   inputSearch.textContent = `Results for "${titleInput.value}"`
   titleInput.value="";
@@ -120,9 +109,6 @@ let showResults = (results) => {
     detailsSection.appendChild(image)
     movieDetailsSec.appendChild(detailsSection)
 
-
-
-    //result information
     let movieTitle = document.createElement('h3')
     movieTitle.classList.add(`nominate${i}`)
     movieTitle.classList.add('movieTitle')
@@ -149,30 +135,26 @@ let showResults = (results) => {
 }
 
 let movieSearch =  () => {
-// function movieSearch(){ // bring back all matches dating back to 1995
   document.querySelector('#output').classList.remove('hidden')
     inputSearch.textContent = `Searching for "${titleInput.value}"`
     document.querySelector('.loader').style.display='flex'
-  // }14
   const yearCheckEnd = 2000
   const currentYear = 2020
   const searchResults = []
 
-  let title = document.querySelector('#titleInput').value.toString().trim() // assigns title input to title, removes white space around text
+  let title = document.querySelector('#titleInput').value.toString().trim() 
   let counter=0;
 
   if (document.querySelector('#output').classList!=="outputContainer"){
     resultsList.innerHTML=''
   }
 
-  while(title.includes(" ")){   // for proper formatting before the request, adds + inbetween spaces
+  while(title.includes(" ")){   
     title=title.replace(" ", `+`)
   }
 
-    // brings back matches from each year ending at yearcheckend`
-     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    // fetch(proxyurl+`http://www.omdbapi.com/?s=${title}&apikey=`)
-    //proxyurl+ below
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
     fetch(proxyurl+`www.omdbapi.com/?apikey=c2d156e8&s=${title}`)
       .then(response=>response.json())
       .then(data=>{
@@ -204,7 +186,7 @@ let movieSearch =  () => {
 function getLocalNominations(){
 
   let nominations;
-  if(localStorage.getItem('nominations') === null){ // if nothing with 'nominations exist then create an empty array'
+  if(localStorage.getItem('nominations') === null){ 
     nominations = [];
   }
   else{
@@ -215,9 +197,7 @@ function getLocalNominations(){
   }
   nominations.forEach((nomination, i) => {
 
-    //counter
     count = nominations.length;
-    // document.querySelector('.countdown').textContent = `${5-count} votes left!`
 
     let listItem = document.createElement('li')
     let movieSelection = document.createElement('h3')
@@ -240,9 +220,8 @@ function getLocalNominations(){
 }
 
 let removeLocalNominations = (nomination) =>{
-// function removeLocalNominations(nomination){
   let nominations;
-  if(localStorage.getItem('nominations') === null){ // if nothing with 'nominations exist then create an empty array'
+  if(localStorage.getItem('nominations') === null){ 
     nominations = [];
   }
   else{
@@ -250,21 +229,20 @@ let removeLocalNominations = (nomination) =>{
   }
   const nominationIndex = nomination;
   nominations.splice(nominations.indexOf(nominationIndex), 1)
-  localStorage.setItem('nominations', JSON.stringify(nominations)) // saves nomination array as 'nominations'
+  localStorage.setItem('nominations', JSON.stringify(nominations)) 
 
 }
 
 let saveLocalNomination = (nomination) => {
-// function saveLocalNomination(nomination){
   let nominations;
-  if(localStorage.getItem('nominations') === null){ // if nothing with 'nominations exist then create an empty array'
+  if(localStorage.getItem('nominations') === null){ 
     nominations = [];
   }
   else{
     nominations = JSON.parse(localStorage.getItem('nominations'))
   }
   nominations.push(nomination);
-  localStorage.setItem('nominations', JSON.stringify(nominations)) // saves nomination array as 'nominations'
+  localStorage.setItem('nominations', JSON.stringify(nominations)) 
 }
 
 titleInput.addEventListener('keyup', (e) => {
